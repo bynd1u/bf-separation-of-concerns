@@ -44,6 +44,29 @@
                 <script id="dom-manipulation-script">
                     'use strict';
                     debugger;
+                    const actual = document.getElementById('actual');
+                    const orderedList = actual.children[0];
+                    console.log(orderedList);
+
+                    const unorderedList = document.createElement('ul');
+
+                    const numChildren = orderedList.children.length;
+
+                    const things = ['robots', 'solar systems', 'oil'];
+
+                    for (let i = 0; i < numChildren - 1; i++) {
+                        const nextChild =
+                            orderedList.children[i].cloneNode(true);
+                        nextChild.innerText = things[i];
+                        unorderedList.appendChild(nextChild);
+                    }
+
+                    actual.replaceChild(unorderedList, orderedList);
+
+                    const h1El = document.createElement('h1');
+                    h1El.innerText = 'a list of things';
+
+                    actual.insertBefore(h1El, unorderedList);
 
                     // write me! (... without using cloneNode, that's kind of cheating)
                 </script>

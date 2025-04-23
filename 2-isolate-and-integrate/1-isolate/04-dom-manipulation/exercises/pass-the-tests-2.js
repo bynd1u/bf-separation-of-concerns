@@ -10,7 +10,20 @@ ulEl.innerHTML = `
 console.log(ulEl.nodeName + ' (before)', ulEl.cloneNode(true));
 
 // --- write some code ---
+const things = ['toad', 'fish', 'frog', 'salamander'];
 
+const liEls = Array.from(ulEl.children);
+
+console.log(liEls, 'liEls');
+
+liEls.forEach((item, index) => {
+  if (item.nodeName === 'P') {
+    ulEl.removeChild(item)
+  } else
+  {
+  item.innerHTML = things[index];
+  }
+})
 // --- --- --- --- --- ---
 
 console.log(ulEl.nodeName + ' (after)', ulEl.cloneNode(true));

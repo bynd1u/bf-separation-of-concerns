@@ -19,6 +19,17 @@ console.log(divEl.nodeName, divEl.cloneNode(true));
 
 // --- write some code ---
 //  you will need to access and update each <td> element
+const table = divEl.children[0];
+const tbody = table.children[0];
+
+const firstTr = tbody.children[0];
+const secondTr = tbody.children[1];
+
+firstTr.children[0].innerHTML = 'a';
+firstTr.children[1].innerHTML = 'b';
+
+secondTr.children[0].innerHTML = 'c';
+secondTr.children[1].innerHTML = 'd';
 
 // --- --- --- --- --- ---
 

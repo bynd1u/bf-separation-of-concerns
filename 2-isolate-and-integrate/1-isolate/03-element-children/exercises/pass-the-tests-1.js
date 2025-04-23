@@ -9,7 +9,11 @@ ulEl.innerHTML = `
 console.log(ulEl.nodeName, ulEl.cloneNode(true));
 
 // --- write some code ---
+const things = ['toad', 'frog', 'salamander'];
 
+things.array.forEach((element, index) => {
+    ulEl.children[index].innerHTML = element;
+});
 // --- --- --- --- --- ---
 
 console.log(ulEl.nodeName, ulEl.cloneNode(true));
